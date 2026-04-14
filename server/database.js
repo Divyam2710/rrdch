@@ -189,13 +189,17 @@ function createTables() {
 }
 
 function seedAdmin() {
-  db.get("SELECT * FROM users WHERE email = 'admin@rrdch.org'", (err, row) => {
+  const adminEmail = process.env.ADMIN_EMAIL || 'admin@rrdch.org';
+  const adminPass = process.env.ADMIN_PASSWORD || 'rrdch-secure-setup-2026';
+  
+  db.get("SELECT * FROM users WHERE email = ?", [adminEmail], (err, row) => {
     if (!row) {
       const salt = bcrypt.genSaltSync(10);
-      const hash = bcrypt.hashSync('admin123', salt);
+      const hash = bcrypt.hashSync(adminPass, salt);
       db.run(`INSERT INTO users (name, email, password, role) VALUES (?, ?, ?, ?)`, 
-        ['System Admin', 'admin@rrdch.org', hash, 'admin']
+        ['System Admin', adminEmail, hash, 'admin']
       );
+      console.log(`Default admin account created. Warning: Change the password immediately in production.`);
     }
   });
 }
