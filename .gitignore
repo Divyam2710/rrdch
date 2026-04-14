@@ -32,3 +32,5 @@ server/uploads/
 *.db-wal
 
 UI_MAPPING.txt
+
+build_error.txt
