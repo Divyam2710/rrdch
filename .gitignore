@@ -30,3 +30,5 @@ server/uploads/
 
 *.db-shm
 *.db-wal
+
+UI_MAPPING.txt
