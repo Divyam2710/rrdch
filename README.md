@@ -107,12 +107,3 @@ Copy `server/.env.example` to `server/.env` and fill in:
 | `PORT` | Server port (default: 5000) |
 | `NODE_ENV` | `development` or `production` |
 
-## GitHub Safety Checklist
-
-Before pushing:
-- ✅ `hospital.db` is gitignored
-- ✅ `.env` files are gitignored
-- ✅ `server/uploads/` is gitignored
-- ✅ `server/node_modules/` is gitignored
-- ✅ No hardcoded passwords in source code (bcrypt-hashed in DB only)
-- ✅ JWT_SECRET loaded from environment, not hardcoded
