@@ -32,9 +32,10 @@ const Departments = () => {
 
   useEffect(() => {
     if (location.state && location.state.tab) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setActiveTab(location.state.tab);
     }
-  }, [location]);
+  }, [location, location.state]);
 
   return (
     <div>
