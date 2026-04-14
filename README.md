@@ -78,11 +78,6 @@ npm run dev
 
 The frontend runs on http://localhost:5173 and the backend on http://localhost:5000.
 
-### Default Admin Credentials
-- **Email:** `admin@rrdch.org`
-- **Password:** `admin123`
-
-> ⚠️ Change the admin password immediately after first login in production.
 
 ## Folder Structure
 
