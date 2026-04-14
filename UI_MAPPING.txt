@@ -1,0 +1,41 @@
+--- RRDCH PROJECT UI TO FILE MAPPING GUIDE ---
+This file helps you find which code file controls which part of your website.
+
+1. GLOBAL LAYOUT (Things that appear on every page)
+- Top Navigation Bar & Logo -> src/components/Navbar.jsx
+- Bottom Footer & Contact Info -> src/components/Footer.jsx
+- Global CSS Colors, Fonts & Spacing -> src/index.css
+- Page Routing, "App Shell" & Protected Routes -> src/App.jsx
+- 404 Fallback (Page Not Found) -> src/pages/NotFound.jsx
+
+2. PUBLIC FACING PAGES
+- The Main Front Page (Hero Banner, Highlights, Stats) -> src/pages/Home.jsx
+- "About Us" Page (History, Mission, Accreditations) -> src/pages/About.jsx
+- "Admissions" Page (BDS/MDS Info & Application Form) -> src/pages/Admissions.jsx
+- Academic Departments & Clinical Specializations -> src/pages/Departments.jsx
+- Campus & Clinical Gallery (Dynamic Image Array) -> src/pages/Gallery.jsx
+- Event Calendar & Schedules (Dynamic API) -> src/pages/CalendarOfEvents.jsx
+- Contact Us Page & Location Map -> src/pages/Contact.jsx
+- Faculty / Doctors List (Dynamic API) -> src/pages/Faculty.jsx
+- Campus News Feeds & Bulletins (Dynamic API) -> src/pages/News.jsx
+
+3. ACADEMIC & INSTITUTIONAL RESOURCES
+- Academic Curriculum & Syllabus Guidelines -> src/pages/Curriculum.jsx
+- Anti-Ragging & Institutional Committees -> src/pages/Committees.jsx
+- Campus Facilities (Hostels, Canteen, Transport) -> src/pages/CampusLife.jsx
+
+4. LOGIN & AUTHENTICATION
+- System Login Screen (Role-based Split Screen) -> src/pages/Login.jsx
+- Token Auth Logic Context (JWT State Management) -> src/context/AuthContext.jsx
+
+5. SECURE PORTALS (Requires Login)
+- The Admin Control Panel (Manages Events, Faculty, Users, Patients) -> src/pages/AdminDashboard.jsx
+- Public Patient Booking Flow & Live Waiting Queue -> src/pages/PatientPortal.jsx
+- Undergraduate Student Dashboard (Schedules, Exams, E-Library) -> src/pages/StudentDashboard.jsx
+- Post-Grad (MDS) Doctor Dashboard (Case Logs, Assigned Patients) -> src/pages/PgDashboard.jsx
+
+6. BACKEND / DATABASE (Node.js & SQLite)
+- The core Express.js API server (Handles all dynamic data) -> server/server.js
+- The database schema, WAL mode config, and init logic -> server/database.js
+
+TIP: If you want to change the color of buttons across the whole app, edit src/index.css. If you want to add a new link to the top of the site, edit src/components/Navbar.jsx.
